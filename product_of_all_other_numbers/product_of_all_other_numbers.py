@@ -3,9 +3,14 @@ Input: a List of integers
 Returns: a List of integers
 '''
 def product_of_all_other_numbers(arr):
-    # Your code here
-
-    pass
+    result = []
+    for i, num in enumerate(arr):
+        prod = 1
+        for j, num in enumerate(arr):
+            if i != j:
+                prod *= arr[j]
+        result.append(prod)
+    return result
 
 
 if __name__ == '__main__':
