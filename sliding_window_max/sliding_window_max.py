@@ -3,10 +3,30 @@ Input: a List of integers as well as an integer `k` representing the size of the
 Returns: a List of integers
 """
 
+# def sliding_window_max(nums, k):
+#     result = []
+#     for i, num in enumerate(nums):
+#         result.append(max(nums[i : i + k]))
+#         if i + k >= len(nums):
+#             break
+#     return result
+
 def sliding_window_max(nums, k):
     result = []
+    maximum = max(nums[:k])
+    max_count = 0
     for i, num in enumerate(nums):
-        result.append(max(nums[i : i + k]))
+        max_count -= 1
+        if max_count <= 0:
+            maximum = num
+            for j, num in enumerate(nums[i : i + k]):
+                if num >= maximum:
+                    maximum = num
+                    max_count = j + 1
+        elif nums[i + k - 1] > maximum:
+            maximum = nums[i + k - 1]
+            max_count = k
+        result.append(maximum)
         if i + k >= len(nums):
             break
     return result
