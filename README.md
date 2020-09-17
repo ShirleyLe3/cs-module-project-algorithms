@@ -34,7 +34,7 @@ There isn't an official prescribed order for tackling the problems, though a sub
 - {X} 2. `moving_zeroes`
 - {X} 3. `product_of_all_other_numbers`
 - {-} 4. `sliding_window_max`
-- { } 5. `eating_cookies`
+- {X} 5. `eating_cookies`
 
 For each problem, `cd` into the directory, read the instructions for the challenge, implement your solution in the skeleton file, then test it using the provided test file.
 
